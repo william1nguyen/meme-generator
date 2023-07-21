@@ -4,8 +4,7 @@ import NavBar from "./NavBar";
 import Input from './Input';
 import { useState, useEffect } from 'react';
 import lodash from 'lodash';
-import html2canvas from 'html2canvas';
-import { saveAs } from 'file-saver';
+import * as htmlToImage from 'html-to-image';
 
 export const MemeGenerator = () => {
     const [memes, setMemes] = useState([]);
@@ -31,10 +30,12 @@ export const MemeGenerator = () => {
     };
 
     const handleDownload = async () => {
-        const element = document.querySelector('.memeimg');
-        const canvas = await html2canvas(element);
-        const dataURL = canvas.toDataURL('image/jpeg');
-        saveAs(dataURL, 'downloaded-image.jpg');
+        const memeImgContainer = document.querySelector('.memeimg');
+        const dataUrl = await htmlToImage.toJpeg(memeImgContainer);
+        var link = document.createElement('a');
+        link.download = 'my-image-name.jpeg';
+        link.href = dataUrl;
+        link.click();
     };
 
     return (
