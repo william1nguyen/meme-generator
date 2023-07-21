@@ -1,0 +1,64 @@
+#root {
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+.meme-generator {
+    width: 550px;
+}
+
+.meme-generator > main {
+    background: #FFF;
+}
+
+.meme-generator > main .input-text {
+    display: flex;
+    padding-top: 36px;
+    justify-content: center;
+    gap: 5px;
+}
+
+.meme-generator > main .primary-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.meme-generator > main .memeimg {
+    position: relative;
+    text-align: center;
+}
+
+.meme-generator > main .memeimg div {
+    position: absolute;
+    -webkit-text-stroke: 1.5px black;
+    color: #FFF;
+    font-family: Impact;
+    font-size: 32px;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.meme-generator > main .memeimg div:nth-child(2) {
+    top: 16px;
+}
+
+.meme-generator > main .memeimg div:nth-child(3) {
+    bottom: 16px;
+}
+
+.meme-generator > main .memeimg img {
+    display: flex;
+    margin: 0 auto;
+    width: 477px;
+    border-radius: 2px;
+    margin-top: 36px;
+    margin-bottom: 55px;
+}
+
+.meme-generator > main .download-button {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+}
